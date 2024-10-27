@@ -46,6 +46,7 @@ app.post("/order", (req, res) => {
 // เริ่มต้นเซิร์ฟเวอร์
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
+    console.log("Current Directory:", __dirname);
     console.log("Public Path:", path.join(__dirname, "public"));
     console.log("Index.html Path:", path.join(__dirname, "public", "index.html"));
 
