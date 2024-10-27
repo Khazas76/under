@@ -49,5 +49,4 @@ app.listen(port, () => {
     console.log("Current Directory:", __dirname);
     console.log("Public Path:", path.join(__dirname, "public"));
     console.log("Index.html Path:", path.join(__dirname, "public", "index.html"));
-
 });
