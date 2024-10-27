@@ -26,12 +26,12 @@ app.get("/staff-dashboard", (req, res) => {
     res.json(orders);
 });
 
-// Serve static files from the "public" directory at specified path
-app.use(express.static("C:/Users/Khazaxtc/Downloads/Project/public"));
+// Serve static files from the "public" directory at the specified path
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route สำหรับหน้าแรก
 app.get("/", (req, res) => {
-    res.sendFile("C:/Users/Khazaxtc/Downloads/Project/public/index.html");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Route สำหรับการจัดการคำสั่งซื้อของลูกค้า
@@ -47,6 +47,6 @@ app.post("/order", (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
     console.log("Current Directory:", __dirname);
-    console.log("Public Path:", "C:/Users/Khazaxtc/Downloads/Project/public");
-    console.log("Index.html Path:", "C:/Users/Khazaxtc/Downloads/Project/public/index.html");
+    console.log("Public Path:", path.join(__dirname, "public"));
+    console.log("Index.html Path:", path.join(__dirname, "public", "index.html"));
 });
